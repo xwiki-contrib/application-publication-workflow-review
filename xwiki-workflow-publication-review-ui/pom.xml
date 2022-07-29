@@ -23,30 +23,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.xwiki.contrib</groupId>
-    <artifactId>application-publication-workflow-review</artifactId>
+    <groupId>org.xwiki.contrib.workflow-publication</groupId>
+    <artifactId>xwiki-workflow-publication-review</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>application-publication-workflow-review-api</artifactId>
-  <name>XWiki Publication Workflow Review Application - API</name>
-  <packaging>jar</packaging>
+  <artifactId>xwiki-workflow-publication-review-ui</artifactId>
+  <name>XWiki Publication Workflow Review Application - UI</name>
+  <packaging>xar</packaging>
   <dependencies>
     <dependency>
-      <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-oldcore</artifactId>
-      <version>${platform.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.xwiki.contrib.workflow-publication</groupId>
-      <artifactId>xwiki-workflow-publication-application</artifactId>
-      <version>1.10</version>
-      <type>xar</type>
+      <artifactId>xwiki-workflow-publication-review-api</artifactId>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
-  <properties>
-    <xwiki.revapi.skip>true</xwiki.revapi.skip>
-    <xwiki.checkstyle.skip>true</xwiki.checkstyle.skip>
-    <xwiki.spoon.skip>true</xwiki.spoon.skip>
-  </properties>
+  <build>
+    <extensions>
+      <!-- Needed to add support for the "xar" packaging -->
+      <extension>
+        <groupId>org.xwiki.commons</groupId>
+        <artifactId>xwiki-commons-tool-xar-handlers</artifactId>
+        <version>${commons.version}</version>
+      </extension>
+    </extensions>
+  </build>
 </project>

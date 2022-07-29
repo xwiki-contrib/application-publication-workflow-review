@@ -59,7 +59,7 @@ public class DefaultPublicationWorkflowReviewManager implements PublicationWorkf
     /**
      * Default event source.
      */
-    static final String EVENT_SOURCE = "org.xwiki.contrib:application-publication-workflow-review-api";
+    static final String EVENT_SOURCE = "org.xwiki.contrib.workflow-publication:xwiki-workflow-publication-review-api";
 
     /**
      * Resolver for document references.
