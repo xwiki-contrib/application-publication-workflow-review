@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib.workflow-publication</groupId>
   <artifactId>xwiki-workflow-publication-review</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <name>XWiki Publication Workflow Review Application</name>
   <packaging>pom</packaging>
   <description>This application is an improvement of the Publication Workflow Application so that the documents published through this extension feature a review date, a notification is sent to the publishers once the review date is reached.</description>
@@ -53,7 +53,7 @@
    <connection>scm:git:git://github.com/xwiki-contrib/application-publication-workflow-review.git</connection>
    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-publication-workflow-review.git</developerConnection>
    <url>https://github.com/xwiki-contrib/application-publication-workflow-review</url>
-    <tag>HEAD</tag>
+    <tag>xwiki-workflow-publication-review-1.0</tag>
   </scm>
   <modules>
     <module>xwiki-workflow-publication-review-api</module>
