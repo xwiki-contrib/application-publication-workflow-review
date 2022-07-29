@@ -34,7 +34,7 @@
   <packaging>pom</packaging>
   <description>This application is an improvement of the Publication Workflow Application so that the documents published through this extension feature a review date, a notification is sent to the publishers once the review date is reached.</description>
   <properties>
-    <xwiki.issueManagement.jira.id>XXX</xwiki.issueManagement.jira.id>
+    <xwiki.issueManagement.jira.id>XAWORKFLOW</xwiki.issueManagement.jira.id>
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
 	<xwiki.extension.category>application</xwiki.extension.category>
 	<platform.version>12.10.4</platform.version>
