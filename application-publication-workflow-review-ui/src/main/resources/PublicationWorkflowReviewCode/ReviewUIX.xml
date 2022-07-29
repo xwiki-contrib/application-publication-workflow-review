@@ -85,7 +85,7 @@
       {{/html}}
     #elseif($action == 'saveReviewDate' &amp;&amp; 	$services.csrf.isTokenValid("$!request.form_token"))
       #try($saveException)
-        #set ($stringReviewDate = $request.get('PublicationWorkflowReviewCode.PublicationWorkflowReviewClass_0_reviewDate'))
+        #set ($stringReviewDate = $request.get('reviewDate'))
         #set ($reviewDate = $datetool.toDate('dd/MM/yyyy', $stringReviewDate))
         #set ($discard = $publicationWorkflowReviewObj.set('reviewDate', $reviewDate))
         #set ($discard = $publishedDocument.save($services.localization.render('workflow.review.saveComment'), true))
@@ -236,14 +236,15 @@
     var form = $('form', modal)
     var data = form.serialize();
     var documentReference = XWiki.Model.serialize(XWiki.currentDocument.documentReference);
+    var reviewDate = $("input[name$='reviewDate']", form).val();
     var url = new XWiki.Document('ReviewUIX', 'PublicationWorkflowReviewCode').getURL('get', 'action=saveReviewDate&amp;xpage=plain&amp;outputSyntax=plain&amp;reference=' + encodeURIComponent(documentReference));
-    url = url + '&amp;' + data;
+    url = url + '&amp;' + data + '&amp;reviewDate=' + encodeURIComponent(reviewDate);
     showLoader();
     $.ajax({
       url: url
     })
-    .done(function(data) {
-      showMessage(modal, 'success', data);
+    .done(function(responseData) {
+      showMessage(modal, 'success', responseData);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
       showMessage(modal, 'error', "An error occurred while saving the review date. Error : " + errorThrown);
